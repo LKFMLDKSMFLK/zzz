@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sn thk lz Pham Thang</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f8f0ff;
+    }
+
+    h1 {
+      color: #6a1b9a;
+    }
+
+    .gift-box {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      background: url('51d69d0b5d5ceb02b24d.jpg') no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.1);
+    }
+
+    #result {
+      font-size: 24px;
+      margin-top: 30px;
+      color: #d32f2f;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #ab47bc;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎁 Bốc quà đi lz thắng</h1>
+  <div class="gift-box" onclick="openGift()"></div>
+  <div id="result">Click vào hộp quà để mở!</div>
+  <button onclick="resetGift()">Thử lại</button>
+
+  <script>
+    const gifts = [
+      "100k và vớ chân gà",
+      "50k và vớ chân gà",
+      "150k và vớ chân gà",
+      "200k và vớ chân gà",
+    
+    ];
+
+    let picked = false;
+
+    function openGift() {
+      if (picked) return;
+      const randomIndex = Math.floor(Math.random() * gifts.length);
+      const gift = gifts[randomIndex];
+      document.getElementById("result").textContent = `Bạn nhận được: ${gift}`;
+      picked = true;
+    }
+
+    function resetGift() {
+      document.getElementById("result").textContent = "Click vào hộp quà để mở!";
+      picked = false;
+    }
+  </script>
+</body>
+</html>
